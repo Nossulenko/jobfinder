@@ -1,11 +1,11 @@
-<script>
+<script setup>
 </script>
 
 <template>
   <router-view></router-view>
 </template>
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
