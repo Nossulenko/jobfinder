@@ -1,36 +1,14 @@
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+
 <template>
-    <!--
-      This example requires updating your template:
-  
-      ```
-      <html class="h-full bg-gray-50">
-      <body class="h-full">
-      ```
-    -->
-    <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div class="w-full max-w-md space-y-8">
         <div>
           <img class="mx-auto h-12 w-auto" src="https://www.renderfabric.com/images/RenderFabric-Logo.png" alt="Your Company" />
-          <h2 class="mt-6 text-center text-3xl tracking-tight text-gray-900">Login</h2>
-          <p class="mt-2 text-center text-sm text-gray-600">
-          
-            {{ ' ' }}
-            
-          </p>
+            <h2 class="mt-6 text-center text-3xl tracking-tight text-gray-900">Login</h2>
+              <p class="mt-2 text-center text-sm text-gray-600">
+             Or
+                <router-link :to="{name: 'Register'}" class="font-medium text-indigo-600 hover:text-indigo-500">
+                  Register for free
+                </router-link>
+              </p>  
         </div>
         <form class="mt-8 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
@@ -64,11 +42,11 @@
               Sign in
             </button>
           </div>
-        </form>
-      </div>
-    </div>
+        </form>  
   </template>
   
   <script setup>
   import { LockClosedIcon } from '@heroicons/vue/20/solid'
   </script>
+
+ 
