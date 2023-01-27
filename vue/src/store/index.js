@@ -13,7 +13,7 @@ const store = createStore({
 
 
         },
-                token: null,
+                token: 123,
             }},
     getters: {},
     actions: {},
