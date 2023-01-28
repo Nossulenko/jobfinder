@@ -7,7 +7,7 @@ const store = createStore({
         user:{  
             
         data: {},
-                token: sessionStorage.getItem('TOKEN'),
+                token: sessionStorage.getItem("TOKEN"),
             }},
     getters: {},
     actions: {
@@ -18,9 +18,10 @@ const store = createStore({
                     "Content-Type": "application/json",
                     Accept: "application/json"
                 },
-                method: 'POST',
+                method: "POST",
                 body: JSON.stringify(user),
-            }).then((res) => res.json()).then((res) =>{
+            }).then((res) => res.json())
+              .then((res) =>{
                 commit('setUser', res);
                 return res; 
             })

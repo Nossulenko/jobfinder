@@ -14,7 +14,7 @@
           <input type="hidden" name="remember" value="true" />
           <div class="-space-y-px rounded-md shadow-sm"> 
               <label for="fullname" class="sr-only">Full Name</label>
-              <input id="fullname" name="name" type="text" autocomplete="name" required="" v-model="user.password_confirmation"  class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Full name" />
+              <input id="fullname" name="name" type="text" autocomplete="name" required="" v-model="user.name"  class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Full name" />
 
 
               <label for="email-address" class="sr-only">Email address</label>
@@ -27,7 +27,7 @@
             </div>
             <div>
               <label for="password_confirmation" class="sr-only">Password Confirmation</label>
-              <input id="password_confirmation" name="password_confirmation" type="password_confirmation" autocomplete="current-password-confirmation" required="" v-model="user.password_confirmation" class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password Confirmation" />
+              <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="current-password-confirmation" required="" v-model="user.password_confirmation" class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password Confirmation" />
             </div>
           
   
