@@ -1,12 +1,12 @@
 <template>
   
     <div class="min-h-full">
-      <Disclosure as="nav" class="bg-gray-200" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
               <div class="flex-shrink-0">
-                <img class="h-10 w-" src="https://www.renderfabric.com/images/RenderFabric-Logo.png" alt="Your Company" />
+                <img class="h-10 w-" src="https://www.renderfabric.com/images/logo.png" alt="Your Company" />
               </div>
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
@@ -18,7 +18,7 @@
                   :class="[
                     this.$route.name === item.to.name 
                   ? '' 
-                  : 'text-black-300 hover:bg-gray-700 hover:text-white', 
+                  : 'text-white hover:bg-gray-700 hover:text-white', 
                   'px-3 py-2 rounded-md text-sm font-medium']" 
                   >{{ item.name }}
                 </router-link>
@@ -27,7 +27,7 @@
             </div>
             <div class="hidden md:block">
               <div class="ml-4 flex items-center md:ml-6">
-                <button type="button" class="rounded-full bg-gray-200 p-1 text-black-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <button type="button" class="rounded-full bg-gray-800 p-1 text-white-700 hover:text-white focus:outline-none  focus:ring-offset-gray-800">
                   <span class="sr-only">View notifications</span>
                   <BellIcon class="h-6 w-6" aria-hidden="true" />
                 </button>
@@ -71,11 +71,11 @@
             <router-link v-for="item in navigation" 
                               :key="item.name"
                               :to="item.to"
-                              active-class="bg-gray-900 text-white cursor-pointer"
+                              active-class="bg-gray-100 text-white cursor-pointer"
                               :class="[
                                 this.$route.name === item.to.name
                                 ? '' 
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white', 
+                                : 'text-gray-300 hover:bg-gray-800 hover:text-white', 
                                 'block px-3 py-2 rounded-md text-base font-medium']" 
                                 >{{ item.name }}
                               
@@ -90,7 +90,7 @@
                 <div class="text-base font-medium leading-none text-white">{{ user.name }}</div>
                 <div class="text-sm font-medium leading-none text-gray-400">{{ user.email }}</div>
               </div>
-              <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-grey focus:ring-offset-2 focus:ring-offset-gray-400">
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="h-6 w-6" aria-hidden="true" />
               </button>
