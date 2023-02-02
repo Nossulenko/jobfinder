@@ -64,7 +64,12 @@
 
   function register(ev) {
     ev.preventDefault();
-    store.dispatch('register', user).then(()=>router.push({name: 'Dashboard'}));
-
+    store
+      .dispatch('register',user)
+      .then((res) => {
+        router.push({
+          name: 'Dashboard'
+      })
+    })
   }
   </script>

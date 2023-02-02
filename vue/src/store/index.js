@@ -3,9 +3,9 @@ import { createStore } from "vuex";
 
 const store = createStore({
 
-    state: { 
-        user:{  
-            
+    state: {
+        user:{
+
         data: {},
                 token: sessionStorage.getItem("TOKEN"),
             }},
@@ -23,24 +23,23 @@ const store = createStore({
             }).then((res) => res.json())
               .then((res) =>{
                 commit('setUser', res);
-                return res; 
+                return res;
             })
     },
 },
     mutations: {
 
         logout(state){
-
-            state.user.data = {};
             state.user.token = null;
+            state.user.data = {};
         },
         setUser: (state, userData) => {
-            state.user.data = userData.user;
             state.user.token = userData.token;
+            state.user.data = userData.user;
             sessionStorage.setItem('TOKEN', userData.token);
         }
     },
     modules: {},
 })
 
-export default store; 
+export default store;
