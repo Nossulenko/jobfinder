@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 
 
+
 const store = createStore({
 
     state: {
@@ -29,7 +30,7 @@ const store = createStore({
 },
     mutations: {
 
-        logout(state){
+        logout: (state) => {
             state.user.token = null;
             state.user.data = {};
         },
