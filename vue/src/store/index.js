@@ -16,13 +16,13 @@ const store = createStore({
             return fetch(`http://localhost:8000/api/register`, {
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json"
+                    Accept: "application/json",
                 },
                 method: "POST",
                 body: JSON.stringify(user),
             }).then((res) => res.json())
               .then((res) =>{
-                commit('setUser', res);
+                commit("setUser", res);
                 return res;
             })
     },
