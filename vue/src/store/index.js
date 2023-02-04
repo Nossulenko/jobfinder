@@ -1,7 +1,7 @@
 import { createStore } from "vuex";
 
 
-
+var method = 'POST';
 const store = createStore({
 
     state: {

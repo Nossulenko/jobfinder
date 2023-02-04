@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Validation\Rules\Password;
+
+/* @package App\Http\Controllers */
 
 class AuthController extends Controller
 {
@@ -12,27 +15,29 @@ class AuthController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required','confirmed',
+            'email' => 'required|email|string|unique:users,email',
+            'password' => ['required','confirmed',
             Password::min(8)
                 ->mixedCase()
                 ->numbers()
                 ->symbols()
+            ]
         ]);
-
+        /** @var \App\Models\User $user */
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password'])
         ]);
 
-        $token = $user->createToken('main')->plainTextToken;
+        $token = $user->createToken(name: 'main')->accessToken;
+
 
         return response([
                 'user' => $user,
                 'token' => $token
         ]);
-        
-    
+
+
     }
 }
