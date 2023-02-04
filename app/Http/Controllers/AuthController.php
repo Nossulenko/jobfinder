@@ -12,30 +12,26 @@ class AuthController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required','confirmed',
             Password::min(8)
                 ->mixedCase()
                 ->numbers()
                 ->symbols()
         ]);
 
-       /*   @var\App\Models\User $user */
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($data['password'])
         ]);
 
         $token = $user->createToken('main')->plainTextToken;
 
-        return response(
-            [
+        return response([
                 'user' => $user,
                 'token' => $token
-            ],
-            
-        );
+        ]);
         
     
     }
