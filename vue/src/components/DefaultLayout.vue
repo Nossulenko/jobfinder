@@ -1,5 +1,5 @@
 <template>
-  
+
     <div class="min-h-full">
       <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -10,16 +10,16 @@
               </div>
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                  <router-link 
-                  v-for="item in navigation" 
-                  :key="item.name" 
-                  :to="item.to" 
+                  <router-link
+                  v-for="item in navigation"
+                  :key="item.name"
+                  :to="item.to"
                   active-class="bg-gray-900 text-white"
                   :class="[
-                    this.$route.name === item.to.name 
-                  ? '' 
-                  : 'text-white hover:bg-gray-700 hover:text-white', 
-                  'px-3 py-2 rounded-md text-sm font-medium']" 
+                    this.$route.name === item.to.name
+                  ? ''
+                  : 'text-white hover:bg-gray-700 hover:text-white',
+                  'px-3 py-2 rounded-md text-sm font-medium']"
                   >{{ item.name }}
                 </router-link>
                 </div>
@@ -31,7 +31,7 @@
                   <span class="sr-only">View notifications</span>
                   <BellIcon class="h-6 w-6" aria-hidden="true" />
                 </button>
-  
+
                 <!-- Profile dropdown -->
                 <Menu as="div" class="relative ml-3">
                   <div>
@@ -65,20 +65,20 @@
             </div>
           </div>
         </div>
-  
+
         <DisclosurePanel class="md:hidden">
           <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-            <router-link v-for="item in navigation" 
+            <router-link v-for="item in navigation"
                               :key="item.name"
                               :to="item.to"
                               active-class="bg-gray-100 text-white cursor-pointer"
                               :class="[
                                 this.$route.name === item.to.name
-                                ? '' 
-                                : 'text-gray-300 hover:bg-gray-800 hover:text-white', 
-                                'block px-3 py-2 rounded-md text-base font-medium']" 
+                                ? ''
+                                : 'text-gray-300 hover:bg-gray-800 hover:text-white',
+                                'block px-3 py-2 rounded-md text-base font-medium']"
                                 >{{ item.name }}
-                              
+
             </router-link>
           </div>
           <div class="border-t border-gray-700 pt-4 pb-3">
@@ -92,7 +92,7 @@
               </div>
               <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-grey focus:ring-offset-2 focus:ring-offset-gray-400">
                 <span class="sr-only">View notifications</span>
-                <BellIcon class="h-6 w-6" aria-hidden="true" />
+                <BellIcon class="h-6 w-6" stroke="white" aria-hidden="true"/>
               </button>
             </div>
             <div class="mt-3 space-y-1 px-2">
@@ -101,19 +101,19 @@
           </div>
         </DisclosurePanel>
       </Disclosure>
-  
+
      <router-view></router-view>
     </div>
-    
+
   </template>
-  
+
   <script>
   import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-  import { useStore } from 'vuex' 
+  import { useStore } from 'vuex'
   import { computed } from 'vue'
-  import { useRouter } from 'vue-router' 
-  
+  import { useRouter } from 'vue-router'
+
   const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -123,15 +123,15 @@
   const navigation = [
     { name: 'Dashboard', to: {name: 'Dashboard'}},
     { name: 'Surveys', to: {name: 'Surveys'}},
-   
 
-    
+
+
   ];
 
   const userNavigation = [
     { name: 'Your Profile',  href:'#' },
     { name: 'Settings', href:'#' },
-   
+
   ];
 
 
@@ -160,12 +160,12 @@
         router.push ({name: 'Login'});
       }
 
-      
+
       return {
         user: computed(() => store.state.user.data),
         navigation,
         logout
-        
+
       };
     },
   };
