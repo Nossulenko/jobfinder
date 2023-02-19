@@ -10,7 +10,7 @@
                 </router-link>
               </p>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 space-y-6" @submit="login">
           <input type="hidden" name="remember" value="true" />
           <div class="-space-y-px rounded-md shadow-sm">
             <div>
@@ -54,16 +54,18 @@
   const user = {
     email: '',
     password: '',
-    remember: true
+    remember: false
   }
 
   function login(ev){
     ev.preventDefault();
-    store.dispatch('login',user).then(() => {
-
-      router.push({
+    store.dispatch('login',user)
+      .then(() => {
+        router.push({
         name: 'Dashboard'
-      })
+      }).catch(error => {
+          console.log(error.response.data); // log the error response data
+        });
     })
   }
   </script>

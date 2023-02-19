@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Validation\Rules\Password;
 
+
+
 /* @package App\Http\Controllers */
 
 class AuthController extends Controller
 {
+
     public function register(Request $request)
     {
         $data = $request->validate([
@@ -31,7 +34,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
-        $token = $user->createToken(name: 'main')->plainTextToken;
+        $token = $user->createToken(name: 'main')->accessToken;
 
 
         return response([
@@ -66,6 +69,7 @@ class AuthController extends Controller
             'token' => $token
         ]);
     }
+
 
     public function logout()
     {
